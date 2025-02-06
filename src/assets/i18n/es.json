@@ -1,0 +1,9 @@
+{
+    "label": {
+        "email": "Correo",
+        "password": "Contraseña"
+    },
+    "button": {
+        "login": "Iniciar sesión"
+    }
+}
