@@ -5,6 +5,11 @@ export const COMIC_ROUTES: Route [] = [
     
     {
         path: "",
+        redirectTo: "/home",  
+        pathMatch: "full"
+    },
+    {
+        path: "home",
         component: DashboardComponent
     }
 ] 
