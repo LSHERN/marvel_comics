@@ -1,1 +1,41 @@
-<p>register works!</p>
+<div class="flex justify-content-center align-items-center h-screen">
+    <div class="flex align-items-center flex-column w-8 gap-3">
+        
+        <form [formGroup]="formRegister" class="flex align-items-center flex-column gap-4">
+            <div class="flex flex-column w-22rem">
+                <label for="name">{{ "label.name" | translate }}</label>
+                <input 
+                    pInputText 
+                    id="name"  
+                    formControlName="name"
+                    placeholder="{{ 'placeholder.name' | translate }}"
+                />
+            </div>
+            <div class="flex flex-column w-22rem">
+                <label for="numberId">{{ "label.number-id" | translate }}</label>
+                <input 
+                    pInputText 
+                    id="numberId"
+                    formControlName="numberId"  
+                    placeholder="{{ 'placeholder.id' | translate }}"
+                />
+            </div>
+            <div class="flex flex-column w-22rem">
+                <label for="email">{{ "label.email" | translate }}</label>
+                <input 
+                    pInputText 
+                    id="email"  
+                    formControlName="email"
+                    placeholder="{{ 'placeholder.email' | translate }}"
+                />
+            </div>
+        </form>
+        <button 
+            [disabled]="!formRegister.valid"
+            pButton 
+            label="{{'button.register' | translate}}"
+            (click)="onRegister()"
+        >
+        </button>
+    </div>
+</div>
