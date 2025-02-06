@@ -1,9 +1,20 @@
 {
     "label": {
         "email": "Correo",
-        "password": "Contraseña"
+        "password": "Contraseña",
+        "number-id": "Identificación",
+        "name": "Nombre completo",
+        "register": "Registrarse",
+        "register-message" :"¿Primera vez en Marvel Comics?"
     },
     "button": {
-        "login": "Iniciar sesión"
+        "login": "Iniciar sesión",
+        "register": "Registrarse"
+    },
+    "placeholder": {
+        "email": "avengermasfuerte@gmail.com",
+        "password": "******",
+        "name": "Tony Stark...",
+        "id": "2309239..."
     }
 }
