@@ -1,38 +1,43 @@
 <div class="flex justify-content-center align-items-center h-screen">
-    <div class="flex align-items-center flex-column w-7 gap-3">
+    <div class="background-image">
+        <div class="overlay"></div>
+    </div>
+    <div class="flex flex-column align-items-center p-5 w-4 border-round shadow-2 bg-white">
+        <h2 class="text-2xl font-medium text-gray-900">{{ 'label.login-name' | translate }}</h2>
+        <div class="flex align-items-center flex-column w-7 gap-3">
+            
+            <form [formGroup]="formLogin" class="flex align-items-center flex-column gap-4">
+                <div class="flex flex-column w-22rem">
+                    <label for="email">{{ "label.email" | translate }}</label>
+                    <input 
+                        pInputText 
+                        id="email"  
+                        formControlName="email"
+                        placeholder="{{ 'placeholder.email' | translate }}"
+                    />
+                </div>
+                <div class="flex flex-column w-22rem">
+                    <label for="password">{{ "label.password" | translate }}</label>
+                    <input 
+                        pInputText 
+                        id="password"
+                        formControlName="password"  
+                        placeholder="{{ 'placeholder.password' | translate }}"
+                    />
+                </div>
+            </form>
         
-        <form [formGroup]="formLogin" class="flex align-items-center flex-column gap-4">
-            <div class="flex flex-column w-22rem">
-
-                <label for="email">{{ "label.email" | translate }}</label>
-                <input 
-                    pInputText 
-                    id="email"  
-                    formControlName="email"
-                    placeholder="{{ 'placeholder.email' | translate }}"
-                />
+            <button 
+                pButton 
+                label="{{'button.login' | translate}}"
+                (click)="onLogin()"
+                [rounded]="true"
+            >
+            </button>
+            <div class="flex align-items-center gap-2">
+                <p>{{"label.register-message" | translate}}</p>
+                <a routerLink="/auth/register">{{"label.register" | translate}}</a>
             </div>
-            <div class="flex flex-column w-22rem">
-
-                <label for="password">{{ "label.password" | translate }}</label>
-                <input 
-                    pInputText 
-                    id="password"
-                    formControlName="password"  
-                    placeholder="{{ 'placeholder.password' | translate }}"
-                />
-            </div>
-        </form>
-    
-        <button 
-            pButton 
-            label="{{'button.login' | translate}}"
-            (click)="onLogin()"
-        >
-        </button>
-        <div class="flex align-items-center gap-2">
-            <p>{{"label.register-message" | translate}}</p>
-            <a routerLink="/auth/register">{{"label.register" | translate}}</a>
         </div>
     </div>
 </div>

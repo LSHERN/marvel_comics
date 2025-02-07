@@ -4,12 +4,16 @@
         "password": "Contraseña",
         "number-id": "Identificación",
         "name": "Nombre completo",
-        "register": "Registrarse",
-        "register-message" :"¿Primera vez en Marvel Comics?"
+        "register": "Registrate!",
+        "register-message" :"¿Primera vez en Marvel Comics?",
+        "login-name":"MARVEL COMICS",
+        "register_title":"REGISTRO"
+
     },
     "button": {
         "login": "Iniciar sesión",
-        "register": "Registrarse"
+        "register": "Registrarse",
+        "return": "Regresar"
     },
     "placeholder": {
         "email": "avengermasfuerte@gmail.com",
