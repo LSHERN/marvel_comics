@@ -7,6 +7,7 @@
         <div class="flex align-items-center flex-column w-8 gap-3">
             
             <form [formGroup]="formRegister" class="flex align-items-center flex-column gap-4">
+    
                 <div class="flex flex-column w-22rem">
                     <label for="name">{{ "label.name" | translate }}</label>
                     <input 
@@ -15,7 +16,11 @@
                         formControlName="name"
                         placeholder="{{ 'placeholder.name' | translate }}"
                     />
+                    <small class="p-error" *ngIf="formRegister.get('name')?.invalid && formRegister.get('name')?.touched">
+                        {{ getErrorMessage('name') }}
+                    </small>
                 </div>
+            
                 <div class="flex flex-column w-22rem">
                     <label for="numberId">{{ "label.number-id" | translate }}</label>
                     <input 
@@ -24,7 +29,11 @@
                         formControlName="numberId"  
                         placeholder="{{ 'placeholder.id' | translate }}"
                     />
+                    <small class="p-error" *ngIf="formRegister.get('numberId')?.invalid && formRegister.get('numberId')?.touched">
+                        {{ getErrorMessage('numberId') }}
+                    </small>
                 </div>
+            
                 <div class="flex flex-column w-22rem">
                     <label for="email">{{ "label.email" | translate }}</label>
                     <input 
@@ -33,26 +42,30 @@
                         formControlName="email"
                         placeholder="{{ 'placeholder.email' | translate }}"
                     />
+                    <small class="p-error" *ngIf="formRegister.get('email')?.invalid && formRegister.get('email')?.touched">
+                        {{ getErrorMessage('email') }}
+                    </small>
                 </div>
+            
+                <button 
+                    [disabled]="!formRegister.valid"
+                    pButton 
+                    label="{{'button.register' | translate}}"
+                    (click)="onRegister()"
+                    [raised]="true"
+                    [rounded]="true"
+                >
+                </button>
+
+                <button 
+                    pButton 
+                    label="{{'button.return' | translate}}"
+                    (click)="goToLogin()"
+                    [rounded]="true"
+                    severity="contrast"
+                >
+                </button>
             </form>
-            <button 
-                [disabled]="!formRegister.valid"
-                pButton 
-                label="{{'button.register' | translate}}"
-                (click)="onRegister()"
-                [raised]="true"
-                [rounded]="true"
-            >
-            </button>
-            <button 
-                [disabled]="formRegister.valid"
-                pButton 
-                label="{{'button.return' | translate}}"
-                (click)="onRegister()"
-                [rounded]="true"
-                severity="contrast"
-            >
-            </button>
         </div>
     </div>
 </div>

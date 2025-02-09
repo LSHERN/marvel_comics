@@ -15,6 +15,9 @@
                         formControlName="email"
                         placeholder="{{ 'placeholder.email' | translate }}"
                     />
+                    <small class="p-error" *ngIf="formLogin.get('email')?.invalid && formLogin.get('email')?.touched">
+                        {{ getErrorMessage('email') }}
+                    </small>                    
                 </div>
                 <div class="flex flex-column w-22rem">
                     <label for="password">{{ "label.password" | translate }}</label>
